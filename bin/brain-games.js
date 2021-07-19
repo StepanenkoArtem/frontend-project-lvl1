@@ -1,1 +1,1 @@
-console.log("Welcome to the Brain games!");
+console.log('Welcome to the Brain games!'); // eslint-disable-line no-console
