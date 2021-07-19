@@ -10,4 +10,7 @@ brain-games:
 publish:
 	npm publish --dry-run
 
+lint:
+	npx eslint .
+
 .PHONY: brain-games install prettier-write
