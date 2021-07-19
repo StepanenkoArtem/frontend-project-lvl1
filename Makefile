@@ -1,5 +1,5 @@
 prettier-write:
-	npx prettier --write .
+	npx prettier-eslint --write **/*.js
 
 install:
 	yarn install --check-files
