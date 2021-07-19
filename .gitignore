@@ -1,2 +1,5 @@
 # Ignore IDE settings
-.vscode
+.vscode/
+
+# Exclude  node modules from repo
+node_modules
