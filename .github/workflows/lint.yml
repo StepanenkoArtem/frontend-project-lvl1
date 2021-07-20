@@ -1,8 +1,9 @@
 name: lint
 on: push
 jobs: 
-  say-hello:
-  runs-on: ubuntu
+  lint:
+  runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: make-lint
         run: make lint
