@@ -1,8 +1,8 @@
-name: "lint"
-on: "push"
+name: lint
+on: push
 jobs: 
   say-hello:
   runs-on: ubuntu
     steps:
-      - name: "make-lint"
-        run: "make lint"
+      - name: make-lint
+        run: make lint
