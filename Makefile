@@ -2,7 +2,7 @@ prettier-write:
 	npx prettier-eslint --write **/*.js
 
 install:
-	yarn install --check-files
+	npm install
 
 brain-games:
 	node bin/brain-games.js
