@@ -2,6 +2,8 @@
 import { question } from 'readline-sync';
 import run from '../src/engine.js';
 
+const TASK_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 const isEven = (number) => number % 2 === 0;
 
 const checkAnswer = (answer, number) => (answer.toLowerCase() === 'yes' && isEven(number))
@@ -22,8 +24,7 @@ const task = () => {
 };
 
 const main = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  run(task);
+  run(task, TASK_DESCRIPTION);
 };
 
 main();
