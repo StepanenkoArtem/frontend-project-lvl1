@@ -9,7 +9,7 @@ export default (task, taskDescription) => {
     if (task()) {
       console.log('Correct');
     } else {
-      console.log(`Let's try again, ${userName}`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
