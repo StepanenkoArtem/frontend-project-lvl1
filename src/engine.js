@@ -13,5 +13,5 @@ export default (task, taskDescription) => {
       return;
     }
   }
-  console.log(`Congratulations, ${userName}`);
+  console.log(`Congratulations, ${userName}!`);
 };
