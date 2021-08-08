@@ -21,7 +21,7 @@ const task = () => {
   const hiddenElementIndex = Math.floor(Math.random() * progression.length);
   const hiddenElementValue = progression[hiddenElementIndex].toString();
   progression[hiddenElementIndex] = '..';
-  const userAnswer = question(`Question: ${progression}\n`);
+  const userAnswer = question(`Question: ${progression.join(' ')}\n`);
 
   return (
     userAnswer === hiddenElementValue || wrongAnswerNotification(userAnswer, hiddenElementValue)
