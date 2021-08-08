@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { question } from 'readline-sync';
-import run from '../src/engine.js';
+import run from '../src/index.js';
 import { wrongAnswerNotification } from '../src/cli.js';
 
 const TASK_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no"';
