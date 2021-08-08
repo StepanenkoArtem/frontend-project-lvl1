@@ -1,26 +1,17 @@
 #!/usr/bin/env node
 import { question } from 'readline-sync';
 import run from '../src/engine.js';
+import { wrongAnswerNotification } from '../src/cli.js';
 
 const TASK_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEven = (number) => number % 2 === 0;
-
-const checkAnswer = (answer, number) => (answer.toLowerCase() === 'yes' && isEven(number))
-  || (answer.toLowerCase() === 'no' && !isEven(number));
+const checkAnswer = (number) => (number % 2 ? 'no' : 'yes');
 
 const task = () => {
   const randomInt = Math.floor(Math.random() * 100);
   const userAnswer = question(`Question: ${randomInt}\n`);
-  const isCorrect = checkAnswer(userAnswer, randomInt);
-  if (!isCorrect) {
-    console.log(
-      `"${userAnswer}" is wrong answer ;(. Correct answer was "${
-        userAnswer === 'no' ? 'yes' : 'no'
-      }".`,
-    );
-  }
-  return isCorrect;
+  const result = checkAnswer(randomInt);
+  return userAnswer === result || wrongAnswerNotification(userAnswer, result);
 };
 
 const main = () => {

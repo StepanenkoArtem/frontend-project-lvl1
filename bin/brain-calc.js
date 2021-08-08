@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { question } from 'readline-sync';
 import run from '../src/engine.js';
+import { wrongAnswerNotification } from '../src/cli.js';
 
 const TASK_DESCRIPTION = 'What is the result of the expression?';
 const OPERATIONS = ['-', '+', '*'];
@@ -23,11 +24,7 @@ const task = () => {
   const operator = OPERATIONS[Math.floor(Math.random() * 3)];
   const userAnswer = question(`Question: ${operands[0]} ${operator} ${operands[1]}\n`);
   const result = calc(operator, operands).toString();
-  const isCorrect = userAnswer === result;
-  if (!isCorrect) {
-    console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".`);
-  }
-  return isCorrect;
+  return userAnswer === result || wrongAnswerNotification(userAnswer, result);
 };
 
 const main = () => {
