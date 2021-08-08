@@ -7,7 +7,7 @@ const TASK_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answe
 
 const isPrime = (number) => {
   for (let i = 2; i < number / 2; i += 1) {
-    if (number % 2 === 0) {
+    if (number % i === 0) {
       return 'no';
     }
   }
