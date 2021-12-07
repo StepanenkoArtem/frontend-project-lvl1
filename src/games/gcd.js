@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
 import { question } from 'readline-sync';
-import { randomInt } from '../heplers.js';
+import randomInt from '../heplers.js';
 
 export const TASK_DESCRIPTION = 'What is the greatest common divisor?';
 

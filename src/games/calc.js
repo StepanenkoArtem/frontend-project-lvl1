@@ -1,5 +1,5 @@
 import { question } from 'readline-sync';
-import { randomInt } from '../heplers.js';
+import randomInt from '../heplers.js';
 
 export const TASK_DESCRIPTION = 'What is the result of the expression?';
 const OPERATIONS = ['-', '+', '*'];
