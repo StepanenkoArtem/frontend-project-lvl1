@@ -20,7 +20,7 @@ const calc = (operator, operands) => {
 
 const task = () => {
   const operands = [randomInt(10), randomInt(10)];
-  const operator = OPERATIONS[randomInt(3)];
+  const operator = OPERATIONS[randomInt(0, 2)];
   const userAnswer = question(`Question: ${operands[0]} ${operator} ${operands[1]}\n`);
   const result = calc(operator, operands).toString();
   return [userAnswer, result];
