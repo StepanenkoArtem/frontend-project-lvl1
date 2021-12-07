@@ -13,4 +13,4 @@ const task = () => {
   return [userAnswer, result];
 };
 
-export default () => run(task, TASK_DESCRIPTION)
+export default () => run(task, TASK_DESCRIPTION);

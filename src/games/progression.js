@@ -3,7 +3,7 @@ import randomInt from '../heplers.js';
 import run from '../index.js';
 
 const TASK_DESCRIPTION = 'What number is missing in the progression?';
-const MIN_PROGRESSION_LENGTH = 5
+const MIN_PROGRESSION_LENGTH = 5;
 const MAX_PROGRESSION_LENGTH = 15;
 
 const createProgression = () => {
