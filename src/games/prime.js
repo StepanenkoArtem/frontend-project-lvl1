@@ -1,5 +1,4 @@
-import { question } from 'readline-sync';
-import randomInt from '../heplers.js';
+import generateRandomInt from '../heplers.js';
 import run from '../index.js';
 
 const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no"';
@@ -14,7 +13,7 @@ const isPrime = (number) => {
 };
 
 const game = () => {
-  const task = randomInt(50, 250);
+  const task = generateRandomInt(50, 250);
   const result = isPrime(task);
   return [task, result];
 };

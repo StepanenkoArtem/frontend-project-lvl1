@@ -1,4 +1,4 @@
-import randomInt from '../heplers.js';
+import generateRandomInt from '../heplers.js';
 import run from '../index.js';
 
 const GAME_DESCRIPTION = 'What number is missing in the progression?';
@@ -14,14 +14,14 @@ const createProgression = (start, step, length) => {
 
 const game = () => {
   const progression = createProgression(
-    randomInt(20),
-    randomInt(1, 20),
-    randomInt(10, 20)
+    generateRandomInt(20),
+    generateRandomInt(1, 20),
+    generateRandomInt(10, 20),
   );
-  const hiddenElementIndex = randomInt(progression.length);
+  const hiddenElementIndex = generateRandomInt(progression.length);
   const hiddenElementValue = progression[hiddenElementIndex].toString();
   progression[hiddenElementIndex] = '..';
-  const task = `${progression.join(' ')}`
+  const task = `${progression.join(' ')}`;
 
   return ([task, hiddenElementValue]);
 };

@@ -1,4 +1,4 @@
-import randomInt from '../heplers.js';
+import generateRandomInt from '../heplers.js';
 import run from '../index.js';
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
@@ -18,9 +18,9 @@ const calc = (operator, operands) => {
 };
 
 const game = () => {
-  const operands = [randomInt(1, 20), randomInt(1, 20)];
-  const operator = OPERATIONS[randomInt(0, 2)];
-  const task = `${operands[0]} ${operator} ${operands[1]}`
+  const operands = [generateRandomInt(1, 20), generateRandomInt(1, 20)];
+  const operator = OPERATIONS[generateRandomInt(0, 2)];
+  const task = `${operands[0]} ${operator} ${operands[1]}`;
   const result = calc(operator, operands).toString();
   return [task, result];
 };

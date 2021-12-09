@@ -1,4 +1,4 @@
-import randomInt from '../heplers.js';
+import generateRandomInt from '../heplers.js';
 import run from '../index.js';
 
 const GAME_DESCRIPTION = 'What is the greatest common divisor?';
@@ -17,8 +17,8 @@ const calc = (operands) => {
 };
 
 const game = () => {
-  const operands = [randomInt(100), randomInt(100)];
-  const task = `${operands[0]} ${operands[1]}`
+  const operands = [generateRandomInt(100), generateRandomInt(100)];
+  const task = `${operands[0]} ${operands[1]}`;
   const result = calc(operands).toString();
   return [task, result];
 };
