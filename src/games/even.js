@@ -1,16 +1,14 @@
-import { question } from 'readline-sync';
 import randomInt from '../heplers.js';
 import run from '../index.js';
 
-const TASK_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const checkAnswer = (number) => (number % 2 ? 'no' : 'yes');
+const isEven = (number) => (number % 2 === 0);
 
-const task = () => {
-  const int = randomInt(10, 100);
-  const userAnswer = question(`Question: ${int}\n`);
-  const result = checkAnswer(int);
-  return [userAnswer, result];
+const game = () => {
+  const task = randomInt(10, 100);
+  const result = isEven(task) ? 'yes' : 'no';
+  return [task, result];
 };
 
-export default () => run(task, TASK_DESCRIPTION);
+export default () => run(game, GAME_DESCRIPTION);

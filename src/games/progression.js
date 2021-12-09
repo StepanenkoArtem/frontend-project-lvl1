@@ -1,30 +1,29 @@
-import { question } from 'readline-sync';
 import randomInt from '../heplers.js';
 import run from '../index.js';
 
-const TASK_DESCRIPTION = 'What number is missing in the progression?';
-const MIN_PROGRESSION_LENGTH = 10;
-const MAX_PROGRESSION_LENGTH = 15;
+const GAME_DESCRIPTION = 'What number is missing in the progression?';
 
-const createProgression = () => {
-  const progressionStep = randomInt(20);
-  const progressionLength = randomInt(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
-  const progression = [randomInt(20)];
-
-  while (progression.length <= progressionLength) {
-    const element = progression[progression.length - 1] + progressionStep;
+const createProgression = (start, step, length) => {
+  const progression = [start];
+  while (progression.length < length) {
+    const element = progression[progression.length - 1] + step;
     progression.push(element);
   }
   return progression;
 };
-const task = () => {
-  const progression = createProgression();
+
+const game = () => {
+  const progression = createProgression(
+    randomInt(20),
+    randomInt(1, 20),
+    randomInt(10, 20)
+  );
   const hiddenElementIndex = randomInt(progression.length);
   const hiddenElementValue = progression[hiddenElementIndex].toString();
   progression[hiddenElementIndex] = '..';
-  const userAnswer = question(`Question: ${progression.join(' ')}\n`);
+  const task = `${progression.join(' ')}`
 
-  return ([userAnswer, hiddenElementValue]);
+  return ([task, hiddenElementValue]);
 };
 
-export default () => run(task, TASK_DESCRIPTION);
+export default () => run(game, GAME_DESCRIPTION);

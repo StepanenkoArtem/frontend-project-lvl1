@@ -2,15 +2,16 @@ import { question } from 'readline-sync';
 
 const MIN_CORRECT_ANSWERS = 3;
 
-export default (task, taskDescription) => {
+export default (game, gameDescription) => {
   console.log('Welcome to the Brain Games!');
   const userName = question('May I have your name?\n');
   console.log(`Hello, ${userName}`);
-  console.log(taskDescription);
+  console.log(gameDescription);
 
   for (let attempts = 1; attempts <= MIN_CORRECT_ANSWERS; attempts += 1) {
-    const [userAnswer, rightAnswer] = task();
-    if (userAnswer === rightAnswer) {
+    const [task, rightAnswer] = game();
+    const userAnswer = question(`Question: ${task}\n`);
+    if (isUserAnwerRight(userAnswer, rightAnswer)) {
       console.log('Correct');
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
@@ -20,3 +21,5 @@ export default (task, taskDescription) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
+
+const isUserAnwerRight = (userAnswer, rightAnswer) => userAnswer === rightAnswer;

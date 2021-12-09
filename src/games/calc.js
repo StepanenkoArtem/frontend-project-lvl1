@@ -1,8 +1,7 @@
-import { question } from 'readline-sync';
 import randomInt from '../heplers.js';
 import run from '../index.js';
 
-const TASK_DESCRIPTION = 'What is the result of the expression?';
+const GAME_DESCRIPTION = 'What is the result of the expression?';
 const OPERATIONS = ['-', '+', '*'];
 
 const calc = (operator, operands) => {
@@ -18,12 +17,12 @@ const calc = (operator, operands) => {
   }
 };
 
-const task = () => {
-  const operands = [randomInt(10), randomInt(10)];
+const game = () => {
+  const operands = [randomInt(1, 20), randomInt(1, 20)];
   const operator = OPERATIONS[randomInt(0, 2)];
-  const userAnswer = question(`Question: ${operands[0]} ${operator} ${operands[1]}\n`);
+  const task = `${operands[0]} ${operator} ${operands[1]}`
   const result = calc(operator, operands).toString();
-  return [userAnswer, result];
+  return [task, result];
 };
 
-export default () => run(task, TASK_DESCRIPTION);
+export default () => run(game, GAME_DESCRIPTION);
